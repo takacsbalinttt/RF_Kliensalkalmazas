@@ -99,5 +99,10 @@ namespace inprogress_winforms_app
             inv.QuantityOnHand = int.Parse(textBox_mennyiseg.Text);
             var response = proxy.ProductInventoryUpdate(inv);
         }
+
+        private void button_megse_Click(object sender, EventArgs e)
+        {
+            textBox_mennyiseg.Text = termeklista[listBox1.SelectedIndex + 1].keszlet.ToString();
+        }
     }
 }

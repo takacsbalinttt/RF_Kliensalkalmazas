@@ -34,11 +34,12 @@
             this.textBox_kereses = new System.Windows.Forms.TextBox();
             this.button_plus = new System.Windows.Forms.Button();
             this.button_minus = new System.Windows.Forms.Button();
+            this.button_megse = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button_mentes
             // 
-            this.button_mentes.Location = new System.Drawing.Point(384, 232);
+            this.button_mentes.Location = new System.Drawing.Point(436, 231);
             this.button_mentes.Name = "button_mentes";
             this.button_mentes.Size = new System.Drawing.Size(91, 80);
             this.button_mentes.TabIndex = 1;
@@ -91,11 +92,22 @@
             this.button_minus.UseVisualStyleBackColor = true;
             this.button_minus.Click += new System.EventHandler(this.button_minus_Click);
             // 
+            // button_megse
+            // 
+            this.button_megse.Location = new System.Drawing.Point(328, 231);
+            this.button_megse.Name = "button_megse";
+            this.button_megse.Size = new System.Drawing.Size(91, 80);
+            this.button_megse.TabIndex = 8;
+            this.button_megse.Text = "Mégse";
+            this.button_megse.UseVisualStyleBackColor = true;
+            this.button_megse.Click += new System.EventHandler(this.button_megse_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(964, 491);
+            this.Controls.Add(this.button_megse);
             this.Controls.Add(this.button_minus);
             this.Controls.Add(this.button_plus);
             this.Controls.Add(this.textBox_kereses);
@@ -116,5 +128,6 @@
         private System.Windows.Forms.TextBox textBox_kereses;
         private System.Windows.Forms.Button button_plus;
         private System.Windows.Forms.Button button_minus;
+        private System.Windows.Forms.Button button_megse;
     }
 }
