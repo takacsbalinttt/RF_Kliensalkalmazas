@@ -75,7 +75,7 @@ namespace inprogress_winforms_app
             List<string> szures = new List<string>();
             for (int i = 0; i < termeklista.Count; i++)
             {
-                if (termeklista[i].nev.StartsWith(textBox_kereses.Text))
+                if (termeklista[i].nev.ToLower().StartsWith(textBox_kereses.Text.ToLower()))
                 {
                     szures.Add(termeklista[i].nev);
                 }
