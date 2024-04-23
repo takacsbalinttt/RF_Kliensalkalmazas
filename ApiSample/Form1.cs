@@ -30,7 +30,7 @@ namespace inprogress_winforms_app
                 listBox1.Items.Add(snaps.Content[i].ProductName);
                 Termek t = new Termek();
                 t.id = i + 1;
-                t.nev = snaps.Content[0].ProductName;
+                t.nev = snaps.Content[i].ProductName;
                 //if (prodinv.Content != null && prodinv.Content.Any())
                 //{
                 //    t.keszlet = prodinv.Content[0].QuantityOnHand;
