@@ -24,8 +24,6 @@ namespace inprogress_winforms_app
             InitializeComponent();
 
             var snaps = proxy.ProductsFindAll();
-            var teszt = proxy.ProductInventoryFindAll();
-            var teszt2 = 1 + 1;
             for (int i = 0; i < snaps.Content.Count; i++)
             {
                 var prodinv = proxy.ProductInventoryFindForProduct(snaps.Content[i].Bvin);
@@ -100,7 +98,13 @@ namespace inprogress_winforms_app
             var inv = proxy.ProductInventoryFind(curproduct.inventory_id).Content;
             inv.QuantityOnHand = int.Parse(textBox_mennyiseg.Text);
             var response = proxy.ProductInventoryUpdate(inv);
-            this.Update();
+
+            if (response != null)
+            {
+                termeklista[index].keszlet = inv.QuantityOnHand;
+
+                textBox_mennyiseg.Text = inv.QuantityOnHand.ToString();
+            };
         }
 
         private void button_megse_Click(object sender, EventArgs e)
