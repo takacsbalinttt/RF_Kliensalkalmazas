@@ -30,19 +30,18 @@ namespace inprogress_winforms_app
                 listBox1.Items.Add(snaps.Content[i].ProductName);
                 Termek t = new Termek();
                 t.id = i + 1;
-                t.nev = snaps.Content[i].ProductName;
-                if (prodinv.Content != null && prodinv.Content.Any())
-                {
-                    t.keszlet = prodinv.Content[0].QuantityOnHand;
-                }
-                else
-                {
-                    continue;
-                    // Kezelés, ha nincs elérhető adat
-                }
-                //t.keszlet = prodinv.Content[0].QuantityOnHand;
+                t.nev = snaps.Content[0].ProductName;
+                //if (prodinv.Content != null && prodinv.Content.Any())
+                //{
+                //    t.keszlet = prodinv.Content[0].QuantityOnHand;
+                //}
+                //else
+                //{
+                //    continue;
+                //     Kezelés, ha nincs elérhető adat
+                //}
+                t.keszlet = prodinv.Content[0].QuantityOnHand;
                 t.inventory_id = prodinv.Content[0].Bvin;
-
                 termeklista.Add(t);
             }
         }
@@ -99,7 +98,6 @@ namespace inprogress_winforms_app
             var inv = proxy.ProductInventoryFind(curproduct.inventory_id).Content;
             inv.QuantityOnHand = int.Parse(textBox_mennyiseg.Text);
             var response = proxy.ProductInventoryUpdate(inv);
-
         }
     }
 }

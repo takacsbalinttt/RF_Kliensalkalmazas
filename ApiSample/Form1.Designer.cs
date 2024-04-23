@@ -38,7 +38,7 @@
             // 
             // button_mentes
             // 
-            this.button_mentes.Location = new System.Drawing.Point(436, 291);
+            this.button_mentes.Location = new System.Drawing.Point(384, 232);
             this.button_mentes.Name = "button_mentes";
             this.button_mentes.Size = new System.Drawing.Size(91, 80);
             this.button_mentes.TabIndex = 1;
@@ -58,7 +58,7 @@
             // 
             // textBox_mennyiseg
             // 
-            this.textBox_mennyiseg.Location = new System.Drawing.Point(329, 169);
+            this.textBox_mennyiseg.Location = new System.Drawing.Point(329, 111);
             this.textBox_mennyiseg.Name = "textBox_mennyiseg";
             this.textBox_mennyiseg.Size = new System.Drawing.Size(198, 22);
             this.textBox_mennyiseg.TabIndex = 4;
@@ -73,7 +73,7 @@
             // 
             // button_plus
             // 
-            this.button_plus.Location = new System.Drawing.Point(467, 206);
+            this.button_plus.Location = new System.Drawing.Point(436, 161);
             this.button_plus.Name = "button_plus";
             this.button_plus.Size = new System.Drawing.Size(60, 50);
             this.button_plus.TabIndex = 6;
@@ -83,7 +83,7 @@
             // 
             // button_minus
             // 
-            this.button_minus.Location = new System.Drawing.Point(329, 206);
+            this.button_minus.Location = new System.Drawing.Point(359, 161);
             this.button_minus.Name = "button_minus";
             this.button_minus.Size = new System.Drawing.Size(60, 50);
             this.button_minus.TabIndex = 7;
