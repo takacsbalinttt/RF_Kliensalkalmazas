@@ -30,7 +30,7 @@ namespace inprogress_winforms_app
                 listBox1.Items.Add(snaps.Content[i].ProductName);
                 Termek t = new Termek();
                 t.id = i + 1;
-                t.nev = snaps.Content[0].ProductName;
+                t.nev = snaps.Content[i].ProductName;
                 //if (prodinv.Content != null && prodinv.Content.Any())
                 //{
                 //    t.keszlet = prodinv.Content[0].QuantityOnHand;
@@ -75,7 +75,7 @@ namespace inprogress_winforms_app
             List<string> szures = new List<string>();
             for (int i = 0; i < termeklista.Count; i++)
             {
-                if (termeklista[i].nev.StartsWith(textBox_kereses.Text))
+                if (termeklista[i].nev.ToLower().StartsWith(textBox_kereses.Text.ToLower()))
                 {
                     szures.Add(termeklista[i].nev);
                 }
