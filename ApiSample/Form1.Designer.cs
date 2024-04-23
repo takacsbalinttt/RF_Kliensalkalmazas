@@ -1,4 +1,4 @@
-﻿namespace inprogress_winforms_app
+﻿namespace ApiSample
 {
     partial class Form1
     {
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.button_mentes = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.textBox_mennyiseg = new System.Windows.Forms.TextBox();
@@ -36,7 +37,11 @@
             this.button_minus = new System.Windows.Forms.Button();
             this.button_megse = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.termekBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.termekBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.termekBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.termekBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // button_mentes
@@ -113,13 +118,23 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.DataSource = this.termekBindingSource1;
             this.dataGridView1.Location = new System.Drawing.Point(469, 103);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 82;
             this.dataGridView1.RowTemplate.Height = 33;
             this.dataGridView1.Size = new System.Drawing.Size(928, 629);
             this.dataGridView1.TabIndex = 9;
+            // 
+            // termekBindingSource
+            // 
+            this.termekBindingSource.DataSource = typeof(ApiSample.Termek);
+            // 
+            // termekBindingSource1
+            // 
+            this.termekBindingSource1.DataSource = typeof(ApiSample.Termek);
             // 
             // Form1
             // 
@@ -138,6 +153,8 @@
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.termekBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.termekBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -152,5 +169,7 @@
         private System.Windows.Forms.Button button_minus;
         private System.Windows.Forms.Button button_megse;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.BindingSource termekBindingSource;
+        private System.Windows.Forms.BindingSource termekBindingSource1;
     }
 }

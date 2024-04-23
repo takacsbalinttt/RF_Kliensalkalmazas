@@ -14,11 +14,12 @@ using Hotcakes.CommerceDTO.v1;
 using System.Security.Cryptography;
 using ApiSample;
 
-namespace inprogress_winforms_app
+namespace ApiSample
 {
     public partial class Form1 : Form
     {
         List<Termek> termeklista = new List<Termek>();
+       
         public Form1()
         {
             InitializeComponent();
@@ -44,6 +45,7 @@ namespace inprogress_winforms_app
                 t.inventory_id = prodinv.Content[0].Bvin;
                 termeklista.Add(t);
             }
+
         }
 
         private void button_plus_Click(object sender, EventArgs e)
@@ -85,14 +87,14 @@ namespace inprogress_winforms_app
 
         }
 
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        public void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             int index = ((ListBox)sender).SelectedIndex + 1;
             textBox_mennyiseg.Text = (termeklista[index].keszlet).ToString();
-            var bindinglist = new BindingList<Termek>(termeklista)[index];
-            var source  = new BindingSource(bindinglist, null);
-            dataGridView1.AutoGenerateColumns = true;
-            dataGridView1.DataSource = source;
+
+            var elem = new List<Termek> { termeklista[index] };
+            termekBindingSource.DataSource = elem;
+            termekBindingSource1.DataSource = elem;
         }
 
         private void button_mentes_Click(object sender, EventArgs e)
