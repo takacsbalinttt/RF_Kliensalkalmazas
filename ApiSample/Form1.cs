@@ -90,9 +90,9 @@ namespace inprogress_winforms_app
             int index = ((ListBox)sender).SelectedIndex + 1;
             textBox_mennyiseg.Text = (termeklista[index].keszlet).ToString();
             var bindinglist = new BindingList<Termek>(termeklista)[index];
-            var source  = new BindingSource(bindinglist, null); 
+            var source  = new BindingSource(bindinglist, null);
+            dataGridView1.AutoGenerateColumns = true;
             dataGridView1.DataSource = source;
-            dataGridView1.Refresh();
         }
 
         private void button_mentes_Click(object sender, EventArgs e)
