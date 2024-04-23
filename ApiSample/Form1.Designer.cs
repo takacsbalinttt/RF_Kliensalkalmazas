@@ -37,11 +37,13 @@
             this.button_minus = new System.Windows.Forms.Button();
             this.button_megse = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nev = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.keszlet = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.inventory_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.termekBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.termekBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.termekBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.termekBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // button_mentes
@@ -118,23 +120,51 @@
             // 
             // dataGridView1
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.DataSource = this.termekBindingSource1;
-            this.dataGridView1.Location = new System.Drawing.Point(469, 103);
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
+            this.nev,
+            this.keszlet,
+            this.inventory_id});
+            this.dataGridView1.Location = new System.Drawing.Point(446, 103);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 82;
             this.dataGridView1.RowTemplate.Height = 33;
-            this.dataGridView1.Size = new System.Drawing.Size(928, 629);
+            this.dataGridView1.Size = new System.Drawing.Size(1027, 629);
             this.dataGridView1.TabIndex = 9;
+            
+            // 
+            // Id
+            // 
+            this.Id.HeaderText = "id";
+            this.Id.MinimumWidth = 10;
+            this.Id.Name = "Id";
+            this.Id.Width = 200;
+            // 
+            // nev
+            // 
+            this.nev.HeaderText = "Név";
+            this.nev.MinimumWidth = 10;
+            this.nev.Name = "nev";
+            this.nev.Width = 200;
+            // 
+            // keszlet
+            // 
+            this.keszlet.HeaderText = "Készlet";
+            this.keszlet.MinimumWidth = 10;
+            this.keszlet.Name = "keszlet";
+            this.keszlet.Width = 200;
+            // 
+            // inventory_id
+            // 
+            this.inventory_id.HeaderText = "Raktár ID";
+            this.inventory_id.MinimumWidth = 10;
+            this.inventory_id.Name = "inventory_id";
+            this.inventory_id.Width = 200;
             // 
             // termekBindingSource
             // 
             this.termekBindingSource.DataSource = typeof(ApiSample.Termek);
-            // 
-            // termekBindingSource1
-            // 
-            this.termekBindingSource1.DataSource = typeof(ApiSample.Termek);
             // 
             // Form1
             // 
@@ -154,7 +184,6 @@
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.termekBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.termekBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -169,7 +198,10 @@
         private System.Windows.Forms.Button button_minus;
         private System.Windows.Forms.Button button_megse;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.BindingSource termekBindingSource;
-        private System.Windows.Forms.BindingSource termekBindingSource1;
+        public System.Windows.Forms.BindingSource termekBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nev;
+        private System.Windows.Forms.DataGridViewTextBoxColumn keszlet;
+        private System.Windows.Forms.DataGridViewTextBoxColumn inventory_id;
     }
 }
