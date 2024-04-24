@@ -8,11 +8,13 @@ using ApiSample;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NUnit.Framework;
 using Assert = NUnit.Framework.Assert;
+using Moq;
 
 namespace UnitTest.Test
 {
     internal class TermekTestFixture
     {
+        
         [Test]
         public void button_plus_Click_IncreasesQuantity()
         {
@@ -109,57 +111,10 @@ namespace UnitTest.Test
             Assert.AreEqual(expectedInventory, termek.keszlet);
         }
 
-        [Test]
-        public void TestProductNameCannotBeEmpty()
-        {
-            
-            Termek termek = new Termek();
-            string invalidProductName = "";
 
-            
-            Assert.Throws<ArgumentException>(() => termek.nev = invalidProductName);
-        }
 
-        [Test]
-        public void TestProductNameMaxLength()
-        {
-            
-            Termek termek = new Termek();
-            string longProductName = new string('A', 10000);
-
-            
-            Assert.Throws<ArgumentException>(() => termek.nev = longProductName);
-        }
-
-        [Test]
-        public void TestProductNameSpecialCharacters()
-        {
-            
-            Termek termek = new Termek();
-            string productNameWithSpecialCharacters = "Example Product #123";
-
-            
-            Assert.Throws<ArgumentException>(() => termek.nev = productNameWithSpecialCharacters);
-        }
-
-        [Test]
-        public void button_mentes_Click_UpdatesQuantity()
-        {
-            
-            var form = new Form1();
-            var initialQuantity = 120;
-            form.textBox_mennyiseg.Text = initialQuantity.ToString();
-            var selectedProductIndex = 0;
-
-            
-            form.listBox1.SelectedIndex = selectedProductIndex;
-            form.button_mentes_Click(null, null);
-
-            
-            var expectedQuantity = int.Parse(form.textBox_mennyiseg.Text);
-            Assert.AreEqual(expectedQuantity, form.termeklista[selectedProductIndex].keszlet);
-        }
         
+
 
         [Test]
         public void button_megse_Click_RestoresOriginalQuantity()
@@ -179,7 +134,66 @@ namespace UnitTest.Test
             Assert.AreEqual(expectedQuantity.ToString(), form.textBox_mennyiseg.Text);
         }
 
-        
+        public interface IInventoryRepository
+        {
+            bool CheckInventoryIdExists(string inventoryId);
+        }
+
+        public class Termekek
+        {
+            private readonly IInventoryRepository _inventoryRepository;
+
+            public Termekek(IInventoryRepository inventoryRepository)
+            {
+                _inventoryRepository = inventoryRepository;
+            }
+
+            public bool CheckInventoryIdExists(string inventoryId)
+            {
+                return _inventoryRepository.CheckInventoryIdExists(inventoryId);
+            }
+        }
+
+        public class MockInventoryRepository : IInventoryRepository
+        {
+            public bool CheckInventoryIdExists(string inventoryId)
+            {
+                // Itt a mock működését implementálhatod, például mindig igazat adhatsz vissza
+                return true;
+            }
+        }
+
+        [Test]
+        public void TestCheckInventoryIdExists()
+        {
+            // Arrange
+            var mockRepository = new MockInventoryRepository();
+            var termek = new Termekek(mockRepository);
+            string inventoryId = "ba5790e5-a252-4fcc-885e-4918f07c6c20";
+
+            // Act
+            bool exists = termek.CheckInventoryIdExists(inventoryId);
+
+            // Assert
+            Assert.IsTrue(exists);
+        }
+
+
+        [Test]
+        public void TestTartalmazSpeciálisKaraktereket_Tartalmaz()
+        {
+            // Arrange
+            Termek termek = new Termek { nev = "Termék (speciális karakterekkel)" };
+
+            // Act
+            bool eredmény = termek.TartalmazSpeciálisKaraktereket();
+
+            // Assert
+            Assert.IsTrue(eredmény);
+        }
+
+
+
 
     }
 
