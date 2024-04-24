@@ -14,11 +14,12 @@ using Hotcakes.CommerceDTO.v1;
 using System.Security.Cryptography;
 using ApiSample;
 
-namespace inprogress_winforms_app
+namespace ApiSample
 {
     public partial class Form1 : Form
     {
         List<Termek> termeklista = new List<Termek>();
+       
         public Form1()
         {
             InitializeComponent();
@@ -44,6 +45,7 @@ namespace inprogress_winforms_app
                 t.inventory_id = prodinv.Content[0].Bvin;
                 termeklista.Add(t);
             }
+
         }
 
         private void button_plus_Click(object sender, EventArgs e)
@@ -89,6 +91,23 @@ namespace inprogress_winforms_app
         {
             int index = ((ListBox)sender).SelectedIndex + 1;
             textBox_mennyiseg.Text = (termeklista[index].keszlet).ToString();
+            var elem = termeklista[index];
+
+
+
+            new DataGridViewColumn { DataPropertyName = "nev" };
+            dataGridView1.Rows.Clear();
+            var newRow = new DataGridViewRow();
+
+            // Add cells with data from the selected item
+            newRow.Cells.Add(new DataGridViewTextBoxCell { Value = elem.id });
+            newRow.Cells.Add(new DataGridViewTextBoxCell { Value = elem.nev });
+            newRow.Cells.Add(new DataGridViewTextBoxCell { Value = elem.keszlet });
+            newRow.Cells.Add(new DataGridViewTextBoxCell { Value = elem.inventory_id });
+
+            // Add the row to the dataGridView
+            dataGridView1.Rows.Add(newRow);
+
         }
 
         private void button_mentes_Click(object sender, EventArgs e)
@@ -111,5 +130,6 @@ namespace inprogress_winforms_app
         {
             textBox_mennyiseg.Text = termeklista[listBox1.SelectedIndex + 1].keszlet.ToString();
         }
+
     }
 }
