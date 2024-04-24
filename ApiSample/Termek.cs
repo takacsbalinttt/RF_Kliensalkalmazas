@@ -12,5 +12,9 @@ namespace ApiSample
         public string nev;
         public int keszlet;
         public string inventory_id;
+
+       
     }
+
+
 }
