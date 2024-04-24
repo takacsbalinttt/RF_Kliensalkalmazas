@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.button_mentes = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
@@ -51,7 +52,9 @@
             // 
             // button_mentes
             // 
-            this.button_mentes.BackColor = System.Drawing.Color.Yellow;
+            this.button_mentes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(232)))), ((int)(((byte)(31)))));
+            this.button_mentes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button_mentes.ForeColor = System.Drawing.Color.Black;
             this.button_mentes.Location = new System.Drawing.Point(1124, 351);
             this.button_mentes.Name = "button_mentes";
             this.button_mentes.Size = new System.Drawing.Size(91, 80);
@@ -62,8 +65,8 @@
             // 
             // listBox1
             // 
-            this.listBox1.BackColor = System.Drawing.SystemColors.Window;
-            this.listBox1.ForeColor = System.Drawing.SystemColors.MenuText;
+            this.listBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(20)))), ((int)(((byte)(35)))));
+            this.listBox1.ForeColor = System.Drawing.Color.White;
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 16;
             this.listBox1.Location = new System.Drawing.Point(22, 127);
@@ -74,6 +77,8 @@
             // 
             // textBox_mennyiseg
             // 
+            this.textBox_mennyiseg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(20)))), ((int)(((byte)(35)))));
+            this.textBox_mennyiseg.ForeColor = System.Drawing.Color.White;
             this.textBox_mennyiseg.Location = new System.Drawing.Point(1017, 233);
             this.textBox_mennyiseg.Name = "textBox_mennyiseg";
             this.textBox_mennyiseg.Size = new System.Drawing.Size(198, 22);
@@ -81,7 +86,9 @@
             // 
             // textBox_kereses
             // 
-            this.textBox_kereses.Location = new System.Drawing.Point(22, 99);
+            this.textBox_kereses.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(20)))), ((int)(((byte)(35)))));
+            this.textBox_kereses.ForeColor = System.Drawing.Color.White;
+            this.textBox_kereses.Location = new System.Drawing.Point(22, 90);
             this.textBox_kereses.Name = "textBox_kereses";
             this.textBox_kereses.Size = new System.Drawing.Size(272, 22);
             this.textBox_kereses.TabIndex = 5;
@@ -89,7 +96,9 @@
             // 
             // button_plus
             // 
-            this.button_plus.BackColor = System.Drawing.Color.Yellow;
+            this.button_plus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(232)))), ((int)(((byte)(31)))));
+            this.button_plus.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button_plus.ForeColor = System.Drawing.Color.Black;
             this.button_plus.Location = new System.Drawing.Point(1124, 277);
             this.button_plus.Name = "button_plus";
             this.button_plus.Size = new System.Drawing.Size(60, 50);
@@ -100,7 +109,9 @@
             // 
             // button_minus
             // 
-            this.button_minus.BackColor = System.Drawing.Color.Yellow;
+            this.button_minus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(232)))), ((int)(((byte)(31)))));
+            this.button_minus.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button_minus.ForeColor = System.Drawing.Color.Black;
             this.button_minus.Location = new System.Drawing.Point(1048, 277);
             this.button_minus.Name = "button_minus";
             this.button_minus.Size = new System.Drawing.Size(60, 50);
@@ -111,7 +122,9 @@
             // 
             // button_megse
             // 
-            this.button_megse.BackColor = System.Drawing.Color.Yellow;
+            this.button_megse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(232)))), ((int)(((byte)(31)))));
+            this.button_megse.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button_megse.ForeColor = System.Drawing.Color.Black;
             this.button_megse.Location = new System.Drawing.Point(1017, 351);
             this.button_megse.Name = "button_megse";
             this.button_megse.Size = new System.Drawing.Size(91, 80);
@@ -122,13 +135,22 @@
             // 
             // dataGridView1
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(20)))), ((int)(((byte)(35)))));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
             this.nev,
             this.keszlet,
             this.inventory_id});
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(20)))), ((int)(((byte)(35)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(20)))), ((int)(((byte)(35)))));
             this.dataGridView1.Location = new System.Drawing.Point(297, 127);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
@@ -194,6 +216,7 @@
             this.Controls.Add(this.textBox_mennyiseg);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.button_mentes);
+            this.ForeColor = System.Drawing.Color.White;
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

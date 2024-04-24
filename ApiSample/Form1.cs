@@ -94,7 +94,7 @@ namespace ApiSample
             var elem = termeklista[index];
 
 
-   
+
             new DataGridViewColumn { DataPropertyName = "nev" };
             dataGridView1.Rows.Clear();
             var newRow = new DataGridViewRow();
