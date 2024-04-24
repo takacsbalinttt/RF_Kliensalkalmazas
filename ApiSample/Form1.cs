@@ -24,6 +24,11 @@ namespace ApiSample
         {
             InitializeComponent();
 
+            
+
+
+
+
             var snaps = proxy.ProductsFindAll();
             for (int i = 0; i < snaps.Content.Count; i++)
             {

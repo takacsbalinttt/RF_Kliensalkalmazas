@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using ApiSample;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NUnit.Framework;
@@ -137,7 +138,7 @@ namespace UnitTest.Test
         {
             // Arrange
             Termek termek = new Termek();
-            string longProductName = new string('A', 255); // A hosszabb mint a megengedett 255 karakter
+            string longProductName = new string('A', 10000); // A hosszabb mint a megengedett 255 karakter
 
             // Act & Assert
             Assert.Throws<ArgumentException>(() => termek.nev = longProductName);
@@ -153,6 +154,8 @@ namespace UnitTest.Test
             // Act & Assert
             Assert.Throws<ArgumentException>(() => termek.nev = productNameWithSpecialCharacters);
         }
+
+        
 
 
 
