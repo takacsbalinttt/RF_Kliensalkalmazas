@@ -205,19 +205,19 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button button_mentes;
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.TextBox textBox_mennyiseg;
-        private System.Windows.Forms.TextBox textBox_kereses;
-        private System.Windows.Forms.Button button_plus;
-        private System.Windows.Forms.Button button_minus;
-        private System.Windows.Forms.Button button_megse;
-        private System.Windows.Forms.DataGridView dataGridView1;
         public System.Windows.Forms.BindingSource termekBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn nev;
         private System.Windows.Forms.DataGridViewTextBoxColumn keszlet;
         private System.Windows.Forms.DataGridViewTextBoxColumn inventory_id;
         private System.Windows.Forms.PictureBox pictureBox1;
+        public System.Windows.Forms.Button button_mentes;
+        public System.Windows.Forms.ListBox listBox1;
+        public System.Windows.Forms.TextBox textBox_mennyiseg;
+        public System.Windows.Forms.TextBox textBox_kereses;
+        public System.Windows.Forms.Button button_plus;
+        public System.Windows.Forms.Button button_minus;
+        public System.Windows.Forms.Button button_megse;
+        public System.Windows.Forms.DataGridView dataGridView1;
     }
 }

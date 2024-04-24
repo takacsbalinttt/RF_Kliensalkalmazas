@@ -48,14 +48,14 @@ namespace ApiSample
 
         }
 
-        private void button_plus_Click(object sender, EventArgs e)
+        public void button_plus_Click(object sender, EventArgs e)
         {
             var z = int.Parse(textBox_mennyiseg.Text);
             z = z + 1;
             textBox_mennyiseg.Text = z.ToString();
         }
 
-        private void button_minus_Click(object sender, EventArgs e)
+        public void button_minus_Click(object sender, EventArgs e)
         {
             var z = int.Parse(textBox_mennyiseg.Text);
             z = z - 1;
@@ -67,12 +67,12 @@ namespace ApiSample
 
         Api proxy = new Api(url, key);
 
-        private void textBox_kereses_TextChanged(object sender, EventArgs e)
+        public void textBox_kereses_TextChanged(object sender, EventArgs e)
         {
             Szures();
         }
 
-        private void Szures()
+        public void Szures()
         {
             List<string> szures = new List<string>();
             for (int i = 0; i < termeklista.Count; i++)
@@ -87,7 +87,7 @@ namespace ApiSample
 
         }
 
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        public void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             int index = ((ListBox)sender).SelectedIndex + 1;
             textBox_mennyiseg.Text = (termeklista[index].keszlet).ToString();
@@ -110,7 +110,7 @@ namespace ApiSample
 
         }
 
-        private void button_mentes_Click(object sender, EventArgs e)
+        public void button_mentes_Click(object sender, EventArgs e)
         {
             var index = listBox1.SelectedIndex + 1;
             var curproduct = termeklista[index];
@@ -126,7 +126,7 @@ namespace ApiSample
             };
         }
 
-        private void button_megse_Click(object sender, EventArgs e)
+        public void button_megse_Click(object sender, EventArgs e)
         {
             textBox_mennyiseg.Text = termeklista[listBox1.SelectedIndex + 1].keszlet.ToString();
         }
