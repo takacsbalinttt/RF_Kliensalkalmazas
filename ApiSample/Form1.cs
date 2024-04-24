@@ -89,7 +89,7 @@ namespace ApiSample
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int index = ((ListBox)sender).SelectedIndex + 1;
+            int index = ((ListBox)sender).SelectedIndex;
             textBox_mennyiseg.Text = (termeklista[index].keszlet).ToString();
             var elem = termeklista[index];
 
@@ -112,7 +112,7 @@ namespace ApiSample
 
         private void button_mentes_Click(object sender, EventArgs e)
         {
-            var index = listBox1.SelectedIndex + 1;
+            var index = listBox1.SelectedIndex;
             var curproduct = termeklista[index];
             var inv = proxy.ProductInventoryFind(curproduct.inventory_id).Content;
             inv.QuantityOnHand = int.Parse(textBox_mennyiseg.Text);
@@ -128,7 +128,7 @@ namespace ApiSample
 
         private void button_megse_Click(object sender, EventArgs e)
         {
-            textBox_mennyiseg.Text = termeklista[listBox1.SelectedIndex + 1].keszlet.ToString();
+            textBox_mennyiseg.Text = termeklista[listBox1.SelectedIndex].keszlet.ToString();
         }
 
     }
