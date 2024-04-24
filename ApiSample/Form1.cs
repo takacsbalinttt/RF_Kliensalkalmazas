@@ -18,7 +18,7 @@ namespace ApiSample
 {
     public partial class Form1 : Form
     {
-        List<Termek> termeklista = new List<Termek>();
+        public List<Termek> termeklista = new List<Termek>();
        
         public Form1()
         {
