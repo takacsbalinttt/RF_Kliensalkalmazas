@@ -30,7 +30,7 @@ namespace ApiSample
                 var prodinv = proxy.ProductInventoryFindForProduct(snaps.Content[i].Bvin);
                 listBox1.Items.Add(snaps.Content[i].ProductName);
                 Termek t = new Termek();
-                t.id = i + 1;
+                t.sku = snaps.Content[i].Sku;
                 t.nev = snaps.Content[i].ProductName;
                 t.keszlet = prodinv.Content[0].QuantityOnHand;
                 t.inventory_id = prodinv.Content[0].Bvin;
@@ -89,7 +89,7 @@ namespace ApiSample
             var newRow = new DataGridViewRow();
 
             // Add cells with data from the selected item
-            newRow.Cells.Add(new DataGridViewTextBoxCell { Value = elem.id });
+            newRow.Cells.Add(new DataGridViewTextBoxCell { Value = elem.sku });
             newRow.Cells.Add(new DataGridViewTextBoxCell { Value = elem.nev });
             newRow.Cells.Add(new DataGridViewTextBoxCell { Value = elem.keszlet });
             newRow.Cells.Add(new DataGridViewTextBoxCell { Value = elem.inventory_id });

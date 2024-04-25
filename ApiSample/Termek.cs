@@ -8,7 +8,7 @@ namespace ApiSample
 {
     public class Termek
     {
-        public int id;
+        public string sku;
         public string nev;
         public int keszlet;
         public string inventory_id;
