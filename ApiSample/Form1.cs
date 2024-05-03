@@ -32,20 +32,10 @@ namespace ApiSample
                 Termek t = new Termek();
                 t.id = i + 1;
                 t.nev = snaps.Content[i].ProductName;
-                //if (prodinv.Content != null && prodinv.Content.Any())
-                //{
-                //    t.keszlet = prodinv.Content[0].QuantityOnHand;
-                //}
-                //else
-                //{
-                //    continue;
-                //     Kezelés, ha nincs elérhető adat
-                //}
                 t.keszlet = prodinv.Content[0].QuantityOnHand;
                 t.inventory_id = prodinv.Content[0].Bvin;
                 termeklista.Add(t);
             }
-
         }
 
         private void button_plus_Click(object sender, EventArgs e)
@@ -92,7 +82,6 @@ namespace ApiSample
             int index = ((ListBox)sender).SelectedIndex;
             textBox_mennyiseg.Text = (termeklista[index].keszlet).ToString();
             var elem = termeklista[index];
-
 
 
             new DataGridViewColumn { DataPropertyName = "nev" };
